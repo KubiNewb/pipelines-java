@@ -1,5 +1,5 @@
 <html>
     <body>
-        <h2>Jak widac program dziala!</h2>
+        <h2>Dziala?</h2>
     </body>
 </html>
