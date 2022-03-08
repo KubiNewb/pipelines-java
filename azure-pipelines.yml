@@ -29,14 +29,6 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: false
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'MyFirstJarFile'
-    publishLocation: 'Container'
-
-- task: Gradle@3
 - task: Gradle@3
   inputs:
     gradleWrapperFile: 'gradlew'
@@ -48,3 +40,8 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
     spotBugsAnalysis: false
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'MyFirstJarFile'
+    publishLocation: 'Container' 
